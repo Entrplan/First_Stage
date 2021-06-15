@@ -1,0 +1,381 @@
+<form
+  class="form"
+  (ngSubmit)="doSave()"
+  [formGroup]="form"
+  #ngForm="ngForm"
+  *ngIf="form"
+>
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>{{ fields.contractDate.label }}</mat-label>
+    <input
+      matInput
+      type="date"
+      [formControlName]="fields.contractDate.name"
+      [placeholder]="fields.contractDate.placeholder"
+      [required]="fields.contractDate.required"
+    appAutofocus
+    />
+
+    <mat-hint *ngIf="fields.contractDate.hint">
+      {{ fields.contractDate.hint }}
+    </mat-hint>
+
+    <mat-error>
+      <app-validations
+        [control]="form.get(fields.contractDate.name)"
+        [label]="fields.contractDate.label"
+      ></app-validations>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>{{ fields.companyRepresentative.label }}</mat-label>
+    <input
+      matInput
+      [formControlName]="fields.companyRepresentative.name"
+      [placeholder]="fields.companyRepresentative.placeholder"
+      [required]="fields.companyRepresentative.required"
+    />
+
+    <mat-hint *ngIf="fields.companyRepresentative.hint">
+      {{ fields.companyRepresentative.hint }}
+    </mat-hint>
+
+    <mat-error>
+      <app-validations
+        [control]="form.get(fields.companyRepresentative.name)"
+        [label]="fields.companyRepresentative.label"
+      ></app-validations>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>{{ fields.secondParty.label }}</mat-label>
+    <input
+      matInput
+      [formControlName]="fields.secondParty.name"
+      [placeholder]="fields.secondParty.placeholder"
+      [required]="fields.secondParty.required"
+    />
+
+    <mat-hint *ngIf="fields.secondParty.hint">
+      {{ fields.secondParty.hint }}
+    </mat-hint>
+
+    <mat-error>
+      <app-validations
+        [control]="form.get(fields.secondParty.name)"
+        [label]="fields.secondParty.label"
+      ></app-validations>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>{{ fields.nationality.label }}</mat-label>
+    <input
+      matInput
+      [formControlName]="fields.nationality.name"
+      [placeholder]="fields.nationality.placeholder"
+      [required]="fields.nationality.required"
+    />
+
+    <mat-hint *ngIf="fields.nationality.hint">
+      {{ fields.nationality.hint }}
+    </mat-hint>
+
+    <mat-error>
+      <app-validations
+        [control]="form.get(fields.nationality.name)"
+        [label]="fields.nationality.label"
+      ></app-validations>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>{{ fields.passportNumber.label }}</mat-label>
+    <input
+      matInput
+      [formControlName]="fields.passportNumber.name"
+      [placeholder]="fields.passportNumber.placeholder"
+      [required]="fields.passportNumber.required"
+    />
+
+    <mat-hint *ngIf="fields.passportNumber.hint">
+      {{ fields.passportNumber.hint }}
+    </mat-hint>
+
+    <mat-error>
+      <app-validations
+        [control]="form.get(fields.passportNumber.name)"
+        [label]="fields.passportNumber.label"
+      ></app-validations>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>{{ fields.passportIssueDate.label }}</mat-label>
+    <input
+      matInput
+      type="date"
+      [formControlName]="fields.passportIssueDate.name"
+      [placeholder]="fields.passportIssueDate.placeholder"
+      [required]="fields.passportIssueDate.required"
+    />
+
+    <mat-hint *ngIf="fields.passportIssueDate.hint">
+      {{ fields.passportIssueDate.hint }}
+    </mat-hint>
+
+    <mat-error>
+      <app-validations
+        [control]="form.get(fields.passportIssueDate.name)"
+        [label]="fields.passportIssueDate.label"
+      ></app-validations>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>{{ fields.email.label }}</mat-label>
+    <input
+      matInput
+      [formControlName]="fields.email.name"
+      [placeholder]="fields.email.placeholder"
+      [required]="fields.email.required"
+    />
+
+    <mat-hint *ngIf="fields.email.hint">
+      {{ fields.email.hint }}
+    </mat-hint>
+
+    <mat-error>
+      <app-validations
+        [control]="form.get(fields.email.name)"
+        [label]="fields.email.label"
+      ></app-validations>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>{{ fields.jobTitle.label }}</mat-label>
+    <input
+      matInput
+      [formControlName]="fields.jobTitle.name"
+      [placeholder]="fields.jobTitle.placeholder"
+      [required]="fields.jobTitle.required"
+    />
+
+    <mat-hint *ngIf="fields.jobTitle.hint">
+      {{ fields.jobTitle.hint }}
+    </mat-hint>
+
+    <mat-error>
+      <app-validations
+        [control]="form.get(fields.jobTitle.name)"
+        [label]="fields.jobTitle.label"
+      ></app-validations>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>{{ fields.dailyWorkingHours.label }}</mat-label>
+    <input
+      matInput
+      [formControlName]="fields.dailyWorkingHours.name"
+      [required]="fields.dailyWorkingHours.required"
+      [placeholder]="fields.dailyWorkingHours.placeholder"
+      type="number"
+      step="1"
+    />
+
+    <mat-hint *ngIf="fields.dailyWorkingHours.hint">
+      {{ fields.dailyWorkingHours.hint }}
+    </mat-hint>
+
+    <mat-error>
+      <app-validations
+        [control]="form.get(fields.dailyWorkingHours.name)"
+        [label]="fields.dailyWorkingHours.label"
+      ></app-validations>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>{{ fields.weeklyWorkingHours.label }}</mat-label>
+    <input
+      matInput
+      [formControlName]="fields.weeklyWorkingHours.name"
+      [required]="fields.weeklyWorkingHours.required"
+      [placeholder]="fields.weeklyWorkingHours.placeholder"
+      type="number"
+      step="1"
+    />
+
+    <mat-hint *ngIf="fields.weeklyWorkingHours.hint">
+      {{ fields.weeklyWorkingHours.hint }}
+    </mat-hint>
+
+    <mat-error>
+      <app-validations
+        [control]="form.get(fields.weeklyWorkingHours.name)"
+        [label]="fields.weeklyWorkingHours.label"
+      ></app-validations>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>{{ fields.weekEndDay.label }}</mat-label>
+    <input
+      matInput
+      [formControlName]="fields.weekEndDay.name"
+      [placeholder]="fields.weekEndDay.placeholder"
+      [required]="fields.weekEndDay.required"
+    />
+
+    <mat-hint *ngIf="fields.weekEndDay.hint">
+      {{ fields.weekEndDay.hint }}
+    </mat-hint>
+
+    <mat-error>
+      <app-validations
+        [control]="form.get(fields.weekEndDay.name)"
+        [label]="fields.weekEndDay.label"
+      ></app-validations>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>{{ fields.workStartDate.label }}</mat-label>
+    <input
+      matInput
+      type="date"
+      [formControlName]="fields.workStartDate.name"
+      [placeholder]="fields.workStartDate.placeholder"
+      [required]="fields.workStartDate.required"
+    />
+
+    <mat-hint *ngIf="fields.workStartDate.hint">
+      {{ fields.workStartDate.hint }}
+    </mat-hint>
+
+    <mat-error>
+      <app-validations
+        [control]="form.get(fields.workStartDate.name)"
+        [label]="fields.workStartDate.label"
+      ></app-validations>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>{{ fields.employeeName.label }}</mat-label>
+    <input
+      matInput
+      [formControlName]="fields.employeeName.name"
+      [placeholder]="fields.employeeName.placeholder"
+      [required]="fields.employeeName.required"
+    />
+
+    <mat-hint *ngIf="fields.employeeName.hint">
+      {{ fields.employeeName.hint }}
+    </mat-hint>
+
+    <mat-error>
+      <app-validations
+        [control]="form.get(fields.employeeName.name)"
+        [label]="fields.employeeName.label"
+      ></app-validations>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>{{ fields.positionName.label }}</mat-label>
+    <input
+      matInput
+      [formControlName]="fields.positionName.name"
+      [placeholder]="fields.positionName.placeholder"
+      [required]="fields.positionName.required"
+    />
+
+    <mat-hint *ngIf="fields.positionName.hint">
+      {{ fields.positionName.hint }}
+    </mat-hint>
+
+    <mat-error>
+      <app-validations
+        [control]="form.get(fields.positionName.name)"
+        [label]="fields.positionName.label"
+      ></app-validations>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>{{ fields.basicSalary.label }}</mat-label>
+    <input
+      matInput
+      [formControlName]="fields.basicSalary.name"
+      [required]="fields.basicSalary.required"
+      [placeholder]="fields.basicSalary.placeholder"
+      type="number"
+      step="1"
+    />
+
+    <mat-hint *ngIf="fields.basicSalary.hint">
+      {{ fields.basicSalary.hint }}
+    </mat-hint>
+
+    <mat-error>
+      <app-validations
+        [control]="form.get(fields.basicSalary.name)"
+        [label]="fields.basicSalary.label"
+      ></app-validations>
+    </mat-error>
+  </mat-form-field>
+
+  <div
+    class="form-buttons"
+    [class.form-buttons-modal]="modal"
+  >
+    <button
+      mat-raised-button
+      [disabled]="saveLoading"
+      color="primary"
+      type="submit"
+    >
+      <mat-icon
+        inline
+        fontSet="far"
+        fontIcon="fa-save"
+      ></mat-icon
+      >&#160;
+      <app-i18n key="common.save"></app-i18n>
+    </button>
+    <button
+      mat-flat-button
+      [disabled]="saveLoading"
+      (click)="doReset()"
+      type="button"
+    >
+      <mat-icon
+        inline
+        fontSet="fas"
+        fontIcon="fa-undo"
+      ></mat-icon
+      >&#160;
+      <app-i18n key="common.reset"></app-i18n>
+    </button>
+
+    <button
+      mat-flat-button
+      [disabled]="saveLoading"
+      type="button"
+      (click)="cancel.emit()"
+    >
+      <mat-icon
+        inline
+        fontSet="fas"
+        fontIcon="fa-times"
+      ></mat-icon
+      >&#160;
+      <app-i18n key="common.cancel"></app-i18n>
+    </button>
+  </div>
+</form>

@@ -1,0 +1,90 @@
+<app-breadcrumb [items]="breadcrumb"></app-breadcrumb>
+
+<div class="app-content-page">
+  <h1 class="app-content-title">
+    <app-i18n key="entities.employmentContract.view.title"></app-i18n>
+  </h1>
+
+  <app-employment-contract-view-toolbar></app-employment-contract-view-toolbar>
+
+  <div *ngIf="loading" class="app-page-spinner">
+    <mat-spinner color="accent"></mat-spinner>
+  </div>
+
+  <div *ngIf="!loading">
+    <app-view-item-text
+      [label]="fields.contractDate.label"
+      [value]="presenter(record, 'contractDate')"
+    ></app-view-item-text>
+
+    <app-view-item-text
+      [label]="fields.companyRepresentative.label"
+      [value]="presenter(record, 'companyRepresentative')"
+    ></app-view-item-text>
+
+    <app-view-item-text
+      [label]="fields.secondParty.label"
+      [value]="presenter(record, 'secondParty')"
+    ></app-view-item-text>
+
+    <app-view-item-text
+      [label]="fields.nationality.label"
+      [value]="presenter(record, 'nationality')"
+    ></app-view-item-text>
+
+    <app-view-item-text
+      [label]="fields.passportNumber.label"
+      [value]="presenter(record, 'passportNumber')"
+    ></app-view-item-text>
+
+    <app-view-item-text
+      [label]="fields.passportIssueDate.label"
+      [value]="presenter(record, 'passportIssueDate')"
+    ></app-view-item-text>
+
+    <app-view-item-text
+      [label]="fields.email.label"
+      [value]="presenter(record, 'email')"
+    ></app-view-item-text>
+
+    <app-view-item-text
+      [label]="fields.jobTitle.label"
+      [value]="presenter(record, 'jobTitle')"
+    ></app-view-item-text>
+
+    <app-view-item-text
+      [label]="fields.dailyWorkingHours.label"
+      [value]="presenter(record, 'dailyWorkingHours')"
+    ></app-view-item-text>
+
+    <app-view-item-text
+      [label]="fields.weeklyWorkingHours.label"
+      [value]="presenter(record, 'weeklyWorkingHours')"
+    ></app-view-item-text>
+
+    <app-view-item-text
+      [label]="fields.weekEndDay.label"
+      [value]="presenter(record, 'weekEndDay')"
+    ></app-view-item-text>
+
+    <app-view-item-text
+      [label]="fields.workStartDate.label"
+      [value]="presenter(record, 'workStartDate')"
+    ></app-view-item-text>
+
+    <app-view-item-text
+      [label]="fields.employeeName.label"
+      [value]="presenter(record, 'employeeName')"
+    ></app-view-item-text>
+
+    <app-view-item-text
+      [label]="fields.positionName.label"
+      [value]="presenter(record, 'positionName')"
+    ></app-view-item-text>
+
+    <app-view-item-text
+      [label]="fields.basicSalary.label"
+      [value]="presenter(record, 'basicSalary')"
+    ></app-view-item-text>
+  </div>
+</div>

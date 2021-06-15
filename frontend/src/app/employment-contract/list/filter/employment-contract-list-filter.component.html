@@ -1,0 +1,300 @@
+<div class="filter">
+  <app-filter-preview
+    [values]="form.value"
+    [fields]="fields"
+    [expanded]="expanded"
+    (click)="doToggleExpanded()"
+    (remove)="doRemove($event)"
+  ></app-filter-preview>
+  <form
+    (ngSubmit)="doFilter()"
+    [formGroup]="form"
+    #ngForm="ngForm"
+    *ngIf="form && expanded"
+  >
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <mat-label>{{ fields.contractDate.label }}</mat-label>
+          <app-date-range-input
+            [formControl]="
+              form.get(fields.contractDateRange.name)
+            "
+          ></app-date-range-input>
+          <mat-error>
+            <app-validations
+              [control]="form.get(fields.contractDateRange.name)"
+              [label]="fields.contractDateRange.label"
+            ></app-validations>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-xs-12 col-lg-6">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <mat-label>{{ fields.companyRepresentative.label }}</mat-label>
+          <input
+            matInput
+            [formControlName]="fields.companyRepresentative.name"
+          />
+          <mat-error>
+            <app-validations
+              [control]="form.get(fields.companyRepresentative.name)"
+              [label]="fields.companyRepresentative.label"
+            ></app-validations>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-xs-12 col-lg-6">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <mat-label>{{ fields.secondParty.label }}</mat-label>
+          <input
+            matInput
+            [formControlName]="fields.secondParty.name"
+          />
+          <mat-error>
+            <app-validations
+              [control]="form.get(fields.secondParty.name)"
+              [label]="fields.secondParty.label"
+            ></app-validations>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-xs-12 col-lg-6">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <mat-label>{{ fields.nationality.label }}</mat-label>
+          <input
+            matInput
+            [formControlName]="fields.nationality.name"
+          />
+          <mat-error>
+            <app-validations
+              [control]="form.get(fields.nationality.name)"
+              [label]="fields.nationality.label"
+            ></app-validations>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-xs-12 col-lg-6">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <mat-label>{{ fields.passportNumber.label }}</mat-label>
+          <input
+            matInput
+            [formControlName]="fields.passportNumber.name"
+          />
+          <mat-error>
+            <app-validations
+              [control]="form.get(fields.passportNumber.name)"
+              [label]="fields.passportNumber.label"
+            ></app-validations>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-xs-12 col-lg-6">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <mat-label>{{ fields.passportIssueDate.label }}</mat-label>
+          <app-date-range-input
+            [formControl]="
+              form.get(fields.passportIssueDateRange.name)
+            "
+          ></app-date-range-input>
+          <mat-error>
+            <app-validations
+              [control]="form.get(fields.passportIssueDateRange.name)"
+              [label]="fields.passportIssueDateRange.label"
+            ></app-validations>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-xs-12 col-lg-6">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <mat-label>{{ fields.email.label }}</mat-label>
+          <input
+            matInput
+            [formControlName]="fields.email.name"
+          />
+          <mat-error>
+            <app-validations
+              [control]="form.get(fields.email.name)"
+              [label]="fields.email.label"
+            ></app-validations>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-xs-12 col-lg-6">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <mat-label>{{ fields.jobTitle.label }}</mat-label>
+          <input
+            matInput
+            [formControlName]="fields.jobTitle.name"
+          />
+          <mat-error>
+            <app-validations
+              [control]="form.get(fields.jobTitle.name)"
+              [label]="fields.jobTitle.label"
+            ></app-validations>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-xs-12 col-lg-6">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <mat-label>{{ fields.dailyWorkingHours.label }}</mat-label>
+          <app-integer-range-input
+            [formControl]="
+              form.get(fields.dailyWorkingHoursRange.name)
+            "
+          ></app-integer-range-input>
+          <mat-error>
+            <app-validations
+              [control]="
+                form.get(fields.dailyWorkingHoursRange.name)
+              "
+              [label]="fields.dailyWorkingHoursRange.label"
+            ></app-validations>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-xs-12 col-lg-6">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <mat-label>{{ fields.weeklyWorkingHours.label }}</mat-label>
+          <app-integer-range-input
+            [formControl]="
+              form.get(fields.weeklyWorkingHoursRange.name)
+            "
+          ></app-integer-range-input>
+          <mat-error>
+            <app-validations
+              [control]="
+                form.get(fields.weeklyWorkingHoursRange.name)
+              "
+              [label]="fields.weeklyWorkingHoursRange.label"
+            ></app-validations>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-xs-12 col-lg-6">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <mat-label>{{ fields.weekEndDay.label }}</mat-label>
+          <input
+            matInput
+            [formControlName]="fields.weekEndDay.name"
+          />
+          <mat-error>
+            <app-validations
+              [control]="form.get(fields.weekEndDay.name)"
+              [label]="fields.weekEndDay.label"
+            ></app-validations>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-xs-12 col-lg-6">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <mat-label>{{ fields.workStartDate.label }}</mat-label>
+          <app-date-range-input
+            [formControl]="
+              form.get(fields.workStartDateRange.name)
+            "
+          ></app-date-range-input>
+          <mat-error>
+            <app-validations
+              [control]="form.get(fields.workStartDateRange.name)"
+              [label]="fields.workStartDateRange.label"
+            ></app-validations>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-xs-12 col-lg-6">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <mat-label>{{ fields.employeeName.label }}</mat-label>
+          <input
+            matInput
+            [formControlName]="fields.employeeName.name"
+          />
+          <mat-error>
+            <app-validations
+              [control]="form.get(fields.employeeName.name)"
+              [label]="fields.employeeName.label"
+            ></app-validations>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-xs-12 col-lg-6">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <mat-label>{{ fields.positionName.label }}</mat-label>
+          <input
+            matInput
+            [formControlName]="fields.positionName.name"
+          />
+          <mat-error>
+            <app-validations
+              [control]="form.get(fields.positionName.name)"
+              [label]="fields.positionName.label"
+            ></app-validations>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-xs-12 col-lg-6">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <mat-label>{{ fields.basicSalary.label }}</mat-label>
+          <app-integer-range-input
+            [formControl]="
+              form.get(fields.basicSalaryRange.name)
+            "
+          ></app-integer-range-input>
+          <mat-error>
+            <app-validations
+              [control]="
+                form.get(fields.basicSalaryRange.name)
+              "
+              [label]="fields.basicSalaryRange.label"
+            ></app-validations>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="filter-buttons">
+      <button
+        mat-raised-button
+        [disabled]="loading"
+        color="primary"
+        type="submit"
+      >
+        <mat-icon
+          inline
+          fontSet="fas"
+          fontIcon="fa-search"
+        ></mat-icon
+        >&#160;
+        <app-i18n key="common.search"></app-i18n>
+      </button>
+      <button
+        mat-flat-button
+        [disabled]="loading"
+        (click)="doReset()"
+        type="button"
+      >
+        <mat-icon
+          inline
+          fontSet="fas"
+          fontIcon="fa-undo"
+        ></mat-icon
+        >&#160;
+        <app-i18n key="common.reset"></app-i18n>
+      </button>
+    </div>
+  </form>
+</div>
