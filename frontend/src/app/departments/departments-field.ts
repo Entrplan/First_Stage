@@ -18,7 +18,7 @@ export class DepartmentsField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.departments,
         };
       },
       options,
@@ -39,7 +39,7 @@ export class DepartmentsField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.departments,
         };
       },
       options,

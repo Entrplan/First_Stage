@@ -18,7 +18,7 @@ export class CommonComiteesField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.menus,
         };
       },
       options,
@@ -39,7 +39,7 @@ export class CommonComiteesField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.menus,
         };
       },
       options,

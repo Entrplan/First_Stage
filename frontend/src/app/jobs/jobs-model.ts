@@ -31,130 +31,42 @@ function placeholder(name) {
 
 const fields = {
   id: new IdField('id', label('id')),
-  positionName: new StringField(
-    'positionName',
-    label('positionName'),
-    {},
-  ),
-  department: DepartmentsField.relationToMany(
-    'department',
-    label('department'),
-    {},
-  ),
-  supervisor: UserField.relationToOne(
-    'supervisor',
-    label('supervisor'),
-    {
-      placeholder: placeholder('supervisor'),
-    },
-  ),
-  jobLocation: new StringField(
-    'jobLocation',
-    label('jobLocation'),
-    {
-      placeholder: placeholder('jobLocation'),
-    },
-  ),
-  jobCode: new StringField('jobCode', label('jobCode'), {
-    placeholder: placeholder('jobCode'),
+  positionName: new StringField('positionName', label('positionName'), {}),
+  department: DepartmentsField.relationToMany('department', label('department'), {}),
+  supervisor: UserField.relationToOne('supervisor', label('supervisor'), {
+    "placeholder": placeholder('supervisor')
   }),
-  generalDescription: new StringField(
-    'generalDescription',
-    label('generalDescription'),
-    {
-      placeholder: placeholder('generalDescription'),
-    },
-  ),
-  generalGoals: new StringField(
-    'generalGoals',
-    label('generalGoals'),
-    {
-      placeholder: placeholder('generalGoals'),
-    },
-  ),
-  detailedGoals: new StringField(
-    'detailedGoals',
-    label('detailedGoals'),
-    {
-      placeholder: placeholder('detailedGoals'),
-    },
-  ),
-  academicCertificates:
-    AcademicCertificatesField.relationToOne(
-      'academicCertificates',
-      label('academicCertificates'),
-      {},
-    ),
-  trainingCertificates:
-    TrainingCertificatesField.relationToOne(
-      'trainingCertificates',
-      label('trainingCertificates'),
-      {},
-    ),
-  professionalCertificates:
-    ProfessionalCertificationsField.relationToOne(
-      'professionalCertificates',
-      label('professionalCertificates'),
-      {},
-    ),
-  softSkills: SoftSkillsField.relationToOne(
-    'softSkills',
-    label('softSkills'),
-    {},
-  ),
-  managementSkills: ManagementSkillsField.relationToOne(
-    'managementSkills',
-    label('managementSkills'),
-    {},
-  ),
-  artitistikSkills: ArtisticSkillsField.relationToOne(
-    'artitistikSkills',
-    label('artitistikSkills'),
-    {},
-  ),
-  jobFramework: JobFrameworksField.relationToOne(
-    'jobFramework',
-    label('jobFramework'),
-    {},
-  ),
-  connectionLevel: ConnectionLevelField.relationToOne(
-    'connectionLevel',
-    label('connectionLevel'),
-    {},
-  ),
-  commonCommittees: CommonComiteesField.relationToMany(
-    'commonCommittees',
-    label('commonCommittees'),
-    {},
-  ),
-  jobRequirments: JobRequirmentsField.relationToOne(
-    'jobRequirments',
-    label('jobRequirments'),
-    {},
-  ),
-  jobPath: JobPathField.relationToOne(
-    'jobPath',
-    label('jobPath'),
-    {},
-  ),
-  tasksDuties: TasksDutiesField.relationToOne(
-    'tasksDuties',
-    label('tasksDuties'),
-    {},
-  ),
-  administrativeFinancialPowers:
-    AdministrativeFinancialPowersField.relationToOne(
-      'administrativeFinancialPowers',
-      label('administrativeFinancialPowers'),
-      {},
-    ),
-  cardInformation: CardInformationField.relationToOne(
-    'cardInformation',
-    label('cardInformation'),
-    {
-      required: true,
-    },
-  ),
+  jobLocation: new StringField('jobLocation', label('jobLocation'), {
+    "placeholder": placeholder('jobLocation')
+  }),
+  jobCode: new StringField('jobCode', label('jobCode'), {
+    "placeholder": placeholder('jobCode')
+  }),
+  generalDescription: new StringField('generalDescription', label('generalDescription'), {
+    "placeholder": placeholder('generalDescription')
+  }),
+  generalGoals: new StringField('generalGoals', label('generalGoals'), {
+    "placeholder": placeholder('generalGoals')
+  }),
+  detailedGoals: new StringField('detailedGoals', label('detailedGoals'), {
+    "placeholder": placeholder('detailedGoals')
+  }),
+  academicCertificates: AcademicCertificatesField.relationToMany('academicCertificates', label('academicCertificates'), {}),
+  trainingCertificates: TrainingCertificatesField.relationToMany('trainingCertificates', label('trainingCertificates'), {}),
+  professionalCertificates: ProfessionalCertificationsField.relationToMany('professionalCertificates', label('professionalCertificates'), {}),
+  softSkills: SoftSkillsField.relationToMany('softSkills', label('softSkills'), {}),
+  managementSkills: ManagementSkillsField.relationToMany('managementSkills', label('managementSkills'), {}),
+  artitistikSkills: ArtisticSkillsField.relationToMany('artitistikSkills', label('artitistikSkills'), {}),
+  jobFramework: JobFrameworksField.relationToOne('jobFramework', label('jobFramework'), {}),
+  connectionLevel: ConnectionLevelField.relationToOne('connectionLevel', label('connectionLevel'), {}),
+  commonCommittees: CommonComiteesField.relationToMany('commonCommittees', label('commonCommittees'), {}),
+  jobRequirments: JobRequirmentsField.relationToOne('jobRequirments', label('jobRequirments'), {}),
+  jobPath: JobPathField.relationToOne('jobPath', label('jobPath'), {}),
+  tasksDuties: TasksDutiesField.relationToOne('tasksDuties', label('tasksDuties'), {}),
+  administrativeFinancialPowers: AdministrativeFinancialPowersField.relationToOne('administrativeFinancialPowers', label('administrativeFinancialPowers'), {}),
+  cardInformation: CardInformationField.relationToOne('cardInformation', label('cardInformation'), {
+    "required": true
+  }),
   createdAt: new DateTimeField(
     'createdAt',
     label('createdAt'),
@@ -167,6 +79,7 @@ const fields = {
     'createdAtRange',
     label('createdAtRange'),
   ),
+
 };
 
 export class JobsModel extends GenericModel {

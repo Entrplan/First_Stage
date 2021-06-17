@@ -18,7 +18,7 @@ export class AdministrativeFinancialPowersField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.administrativeFinancialPowers,
         };
       },
       options,
@@ -39,7 +39,7 @@ export class AdministrativeFinancialPowersField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.administrativeFinancialPowers,
         };
       },
       options,

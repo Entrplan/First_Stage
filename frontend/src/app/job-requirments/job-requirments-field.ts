@@ -18,7 +18,7 @@ export class JobRequirmentsField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.tactLevel,
         };
       },
       options,
@@ -39,7 +39,7 @@ export class JobRequirmentsField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.tactLevel,
         };
       },
       options,

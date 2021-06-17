@@ -18,7 +18,7 @@ export class TasksDutiesField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.tasksDuties,
         };
       },
       options,
@@ -39,7 +39,7 @@ export class TasksDutiesField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.tasksDuties,
         };
       },
       options,

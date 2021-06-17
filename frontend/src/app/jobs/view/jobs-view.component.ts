@@ -8,7 +8,6 @@ import { AuthService } from 'src/app/auth/auth.service';
 @Component({
   selector: 'app-jobs-view',
   templateUrl: './jobs-view.component.html',
-  styleUrls: ['./jobs-view.css'],
 })
 export class JobsViewComponent implements OnInit {
   constructor(

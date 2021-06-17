@@ -18,7 +18,7 @@ export class CardInformationField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.version,
         };
       },
       options,
@@ -39,7 +39,7 @@ export class CardInformationField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.version,
         };
       },
       options,

@@ -18,7 +18,7 @@ export class JobPathField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.jobName,
         };
       },
       options,
@@ -39,7 +39,7 @@ export class JobPathField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.jobName,
         };
       },
       options,

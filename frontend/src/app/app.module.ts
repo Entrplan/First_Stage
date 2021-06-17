@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { NgxPrintModule } from 'ngx-print';
 
 import {
   AppRoutingModule,
@@ -19,7 +18,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    NgxPrintModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

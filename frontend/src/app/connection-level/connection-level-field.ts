@@ -18,7 +18,7 @@ export class ConnectionLevelField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.external,
         };
       },
       options,
@@ -39,7 +39,7 @@ export class ConnectionLevelField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.external,
         };
       },
       options,

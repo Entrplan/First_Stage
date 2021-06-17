@@ -152,12 +152,12 @@ export class Permissions {
       },
       jobsRead: {
         id: 'jobsRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       jobsAutocomplete: {
         id: 'jobsAutocomplete',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
@@ -195,12 +195,12 @@ export class Permissions {
       },
       candidatesRead: {
         id: 'candidatesRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       candidatesAutocomplete: {
         id: 'candidatesAutocomplete',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
@@ -475,12 +475,12 @@ export class Permissions {
       },
       clientsRead: {
         id: 'clientsRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       clientsAutocomplete: {
         id: 'clientsAutocomplete',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
@@ -515,12 +515,12 @@ export class Permissions {
       },
       usersNewRead: {
         id: 'usersNewRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       usersNewAutocomplete: {
         id: 'usersNewAutocomplete',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
@@ -555,23 +555,23 @@ export class Permissions {
       },
       jobFrameworksRead: {
         id: 'jobFrameworksRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       jobFrameworksAutocomplete: {
         id: 'jobFrameworksAutocomplete',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
       leaveApplicationFormImport: {
         id: 'leaveApplicationFormImport',
-        allowedRoles: [roles.custom],
+        allowedRoles: [roles.admin],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       leaveApplicationFormCreate: {
         id: 'leaveApplicationFormCreate',
-        allowedRoles: [roles.custom],
+        allowedRoles: [roles.admin],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -579,7 +579,7 @@ export class Permissions {
       },
       leaveApplicationFormEdit: {
         id: 'leaveApplicationFormEdit',
-        allowedRoles: [roles.custom],
+        allowedRoles: [roles.admin],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -587,7 +587,7 @@ export class Permissions {
       },
       leaveApplicationFormDestroy: {
         id: 'leaveApplicationFormDestroy',
-        allowedRoles: [roles.custom],
+        allowedRoles: [roles.admin],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -595,12 +595,12 @@ export class Permissions {
       },
       leaveApplicationFormRead: {
         id: 'leaveApplicationFormRead',
-        allowedRoles: [roles.custom],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       leaveApplicationFormAutocomplete: {
         id: 'leaveApplicationFormAutocomplete',
-        allowedRoles: [roles.custom],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
@@ -635,12 +635,12 @@ export class Permissions {
       },
       employmentContractRead: {
         id: 'employmentContractRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       employmentContractAutocomplete: {
         id: 'employmentContractAutocomplete',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
@@ -675,12 +675,12 @@ export class Permissions {
       },
       connectionLevelRead: {
         id: 'connectionLevelRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       connectionLevelAutocomplete: {
         id: 'connectionLevelAutocomplete',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
@@ -715,12 +715,12 @@ export class Permissions {
       },
       commonComiteesRead: {
         id: 'commonComiteesRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       commonComiteesAutocomplete: {
         id: 'commonComiteesAutocomplete',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
@@ -755,12 +755,12 @@ export class Permissions {
       },
       jobRequirmentsRead: {
         id: 'jobRequirmentsRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       jobRequirmentsAutocomplete: {
         id: 'jobRequirmentsAutocomplete',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
@@ -795,12 +795,12 @@ export class Permissions {
       },
       jobPathRead: {
         id: 'jobPathRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       jobPathAutocomplete: {
         id: 'jobPathAutocomplete',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
@@ -835,12 +835,12 @@ export class Permissions {
       },
       tasksDutiesRead: {
         id: 'tasksDutiesRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       tasksDutiesAutocomplete: {
         id: 'tasksDutiesAutocomplete',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
@@ -875,12 +875,12 @@ export class Permissions {
       },
       administrativeFinancialPowersRead: {
         id: 'administrativeFinancialPowersRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       administrativeFinancialPowersAutocomplete: {
         id: 'administrativeFinancialPowersAutocomplete',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
@@ -915,23 +915,23 @@ export class Permissions {
       },
       cardInformationRead: {
         id: 'cardInformationRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       cardInformationAutocomplete: {
         id: 'cardInformationAutocomplete',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
       tellProblemImport: {
         id: 'tellProblemImport',
-        allowedRoles: [roles.custom],
+        allowedRoles: [roles.admin],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       tellProblemCreate: {
         id: 'tellProblemCreate',
-        allowedRoles: [roles.custom],
+        allowedRoles: [roles.admin],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -939,7 +939,7 @@ export class Permissions {
       },
       tellProblemEdit: {
         id: 'tellProblemEdit',
-        allowedRoles: [roles.custom],
+        allowedRoles: [roles.admin],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -947,7 +947,7 @@ export class Permissions {
       },
       tellProblemDestroy: {
         id: 'tellProblemDestroy',
-        allowedRoles: [roles.custom],
+        allowedRoles: [roles.admin],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -955,12 +955,12 @@ export class Permissions {
       },
       tellProblemRead: {
         id: 'tellProblemRead',
-        allowedRoles: [roles.custom],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       tellProblemAutocomplete: {
         id: 'tellProblemAutocomplete',
-        allowedRoles: [roles.custom],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
@@ -995,12 +995,12 @@ export class Permissions {
       },
       departmentsRead: {
         id: 'departmentsRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       departmentsAutocomplete: {
         id: 'departmentsAutocomplete',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
     };

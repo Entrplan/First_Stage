@@ -24,7 +24,7 @@ const fields = {
     "placeholder": placeholder('addedCommittee')
   }),
   menus: new EnumeratorField('menus', label('menus'), [
-    { id: ': لجنة المبايعات', label: enumeratorLabel('menus', ': لجنة المبايعات') },
+    { id: 'لجنة المبايعات', label: enumeratorLabel('menus', 'لجنة المبايعات') },
     { id: 'لجنة المسافرات', label: enumeratorLabel('menus', 'لجنة المسافرات') },
     { id: 'لجنة المصالحات', label: enumeratorLabel('menus', 'لجنة المصالحات') },
     { id: 'لجنة اللجان', label: enumeratorLabel('menus', 'لجنة اللجان') },
