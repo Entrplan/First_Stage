@@ -564,54 +564,6 @@
           },
           {
             "in": "query",
-            "name": "filter[academicCertificates]",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "in": "query",
-            "name": "filter[trainingCertificates]",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "in": "query",
-            "name": "filter[professionalCertificates]",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "in": "query",
-            "name": "filter[softSkills]",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "in": "query",
-            "name": "filter[managementSkills]",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "in": "query",
-            "name": "filter[artitistikSkills]",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "in": "query",
             "name": "filter[jobFramework]",
             "schema": {
               "type": "string",
@@ -7025,7 +6977,7 @@
             "name": "filter[menus]",
             "schema": {
               "type": "string",
-              "enum": [": لجنة المبايعات","لجنة المسافرات","لجنة المصالحات","لجنة اللجان"]
+              "enum": ["لجنة المبايعات","لجنة المسافرات","لجنة المصالحات","لجنة اللجان"]
             }
           },      
           {
@@ -11769,22 +11721,40 @@
             "type": "string"
           },
           "academicCertificates": {
-            "$ref": "#/components/schemas/AcademicCertificates"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AcademicCertificates"
+            }
           },
           "trainingCertificates": {
-            "$ref": "#/components/schemas/TrainingCertificates"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TrainingCertificates"
+            }
           },
           "professionalCertificates": {
-            "$ref": "#/components/schemas/ProfessionalCertifications"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProfessionalCertifications"
+            }
           },
           "softSkills": {
-            "$ref": "#/components/schemas/SoftSkills"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SoftSkills"
+            }
           },
           "managementSkills": {
-            "$ref": "#/components/schemas/ManagementSkills"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ManagementSkills"
+            }
           },
           "artitistikSkills": {
-            "$ref": "#/components/schemas/ArtisticSkills"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArtisticSkills"
+            }
           },
           "jobFramework": {
             "$ref": "#/components/schemas/JobFrameworks"
@@ -11848,28 +11818,46 @@
             "type": "string"
           },
           "academicCertificates": {
-            "type": "string",
-            "format": "uuid"
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
           },
           "trainingCertificates": {
-            "type": "string",
-            "format": "uuid"
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
           },
           "professionalCertificates": {
-            "type": "string",
-            "format": "uuid"
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
           },
           "softSkills": {
-            "type": "string",
-            "format": "uuid"
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
           },
           "managementSkills": {
-            "type": "string",
-            "format": "uuid"
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
           },
           "artitistikSkills": {
-            "type": "string",
-            "format": "uuid"
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
           },
           "jobFramework": {
             "type": "string",
@@ -12578,7 +12566,7 @@
           },
           "menus": {
             "type": "string",
-            "enum": [": لجنة المبايعات","لجنة المسافرات","لجنة المصالحات","لجنة اللجان"]
+            "enum": ["لجنة المبايعات","لجنة المسافرات","لجنة المصالحات","لجنة اللجان"]
           }    
         }
       },
@@ -12590,7 +12578,7 @@
           },
           "menus": {
             "type": "string",
-            "enum": [": لجنة المبايعات","لجنة المسافرات","لجنة المصالحات","لجنة اللجان"]
+            "enum": ["لجنة المبايعات","لجنة المسافرات","لجنة المصالحات","لجنة اللجان"]
           }    
         }
       },

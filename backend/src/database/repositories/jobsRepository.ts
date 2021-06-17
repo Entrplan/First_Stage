@@ -35,12 +35,6 @@ class JobsRepository {
           'importHash',
         ]),
         supervisorId: data.supervisor || null,
-        academicCertificatesId: data.academicCertificates || null,
-        trainingCertificatesId: data.trainingCertificates || null,
-        professionalCertificatesId: data.professionalCertificates || null,
-        softSkillsId: data.softSkills || null,
-        managementSkillsId: data.managementSkills || null,
-        artitistikSkillsId: data.artitistikSkills || null,
         jobFrameworkId: data.jobFramework || null,
         connectionLevelId: data.connectionLevel || null,
         jobRequirmentsId: data.jobRequirments || null,
@@ -58,6 +52,24 @@ class JobsRepository {
     );
 
     await record.setDepartment(data.department || [], {
+      transaction,
+    });
+    await record.setAcademicCertificates(data.academicCertificates || [], {
+      transaction,
+    });
+    await record.setTrainingCertificates(data.trainingCertificates || [], {
+      transaction,
+    });
+    await record.setProfessionalCertificates(data.professionalCertificates || [], {
+      transaction,
+    });
+    await record.setSoftSkills(data.softSkills || [], {
+      transaction,
+    });
+    await record.setManagementSkills(data.managementSkills || [], {
+      transaction,
+    });
+    await record.setArtitistikSkills(data.artitistikSkills || [], {
       transaction,
     });
     await record.setCommonCommittees(data.commonCommittees || [], {
@@ -116,12 +128,6 @@ class JobsRepository {
           'importHash',
         ]),
         supervisorId: data.supervisor || null,
-        academicCertificatesId: data.academicCertificates || null,
-        trainingCertificatesId: data.trainingCertificates || null,
-        professionalCertificatesId: data.professionalCertificates || null,
-        softSkillsId: data.softSkills || null,
-        managementSkillsId: data.managementSkills || null,
-        artitistikSkillsId: data.artitistikSkills || null,
         jobFrameworkId: data.jobFramework || null,
         connectionLevelId: data.connectionLevel || null,
         jobRequirmentsId: data.jobRequirments || null,
@@ -137,6 +143,24 @@ class JobsRepository {
     );
 
     await record.setDepartment(data.department || [], {
+      transaction,
+    });
+    await record.setAcademicCertificates(data.academicCertificates || [], {
+      transaction,
+    });
+    await record.setTrainingCertificates(data.trainingCertificates || [], {
+      transaction,
+    });
+    await record.setProfessionalCertificates(data.professionalCertificates || [], {
+      transaction,
+    });
+    await record.setSoftSkills(data.softSkills || [], {
+      transaction,
+    });
+    await record.setManagementSkills(data.managementSkills || [], {
+      transaction,
+    });
+    await record.setArtitistikSkills(data.artitistikSkills || [], {
       transaction,
     });
     await record.setCommonCommittees(data.commonCommittees || [], {
@@ -199,30 +223,6 @@ class JobsRepository {
       {
         model: options.database.user,
         as: 'supervisor',
-      },
-      {
-        model: options.database.academicCertificates,
-        as: 'academicCertificates',
-      },
-      {
-        model: options.database.trainingCertificates,
-        as: 'trainingCertificates',
-      },
-      {
-        model: options.database.professionalCertifications,
-        as: 'professionalCertificates',
-      },
-      {
-        model: options.database.softSkills,
-        as: 'softSkills',
-      },
-      {
-        model: options.database.managementSkills,
-        as: 'managementSkills',
-      },
-      {
-        model: options.database.artisticSkills,
-        as: 'artitistikSkills',
       },
       {
         model: options.database.jobFrameworks,
@@ -350,30 +350,6 @@ class JobsRepository {
         as: 'supervisor',
       },
       {
-        model: options.database.academicCertificates,
-        as: 'academicCertificates',
-      },
-      {
-        model: options.database.trainingCertificates,
-        as: 'trainingCertificates',
-      },
-      {
-        model: options.database.professionalCertifications,
-        as: 'professionalCertificates',
-      },
-      {
-        model: options.database.softSkills,
-        as: 'softSkills',
-      },
-      {
-        model: options.database.managementSkills,
-        as: 'managementSkills',
-      },
-      {
-        model: options.database.artisticSkills,
-        as: 'artitistikSkills',
-      },
-      {
         model: options.database.jobFrameworks,
         as: 'jobFramework',
       },
@@ -480,54 +456,6 @@ class JobsRepository {
             filter.detailedGoals,
           ),
         );
-      }
-
-      if (filter.academicCertificates) {
-        whereAnd.push({
-          ['academicCertificatesId']: SequelizeFilterUtils.uuid(
-            filter.academicCertificates,
-          ),
-        });
-      }
-
-      if (filter.trainingCertificates) {
-        whereAnd.push({
-          ['trainingCertificatesId']: SequelizeFilterUtils.uuid(
-            filter.trainingCertificates,
-          ),
-        });
-      }
-
-      if (filter.professionalCertificates) {
-        whereAnd.push({
-          ['professionalCertificatesId']: SequelizeFilterUtils.uuid(
-            filter.professionalCertificates,
-          ),
-        });
-      }
-
-      if (filter.softSkills) {
-        whereAnd.push({
-          ['softSkillsId']: SequelizeFilterUtils.uuid(
-            filter.softSkills,
-          ),
-        });
-      }
-
-      if (filter.managementSkills) {
-        whereAnd.push({
-          ['managementSkillsId']: SequelizeFilterUtils.uuid(
-            filter.managementSkills,
-          ),
-        });
-      }
-
-      if (filter.artitistikSkills) {
-        whereAnd.push({
-          ['artitistikSkillsId']: SequelizeFilterUtils.uuid(
-            filter.artitistikSkills,
-          ),
-        });
       }
 
       if (filter.jobFramework) {
@@ -694,6 +622,12 @@ class JobsRepository {
       values = {
         ...record.get({ plain: true }),
         departmentIds: data.department,
+        academicCertificatesIds: data.academicCertificates,
+        trainingCertificatesIds: data.trainingCertificates,
+        professionalCertificatesIds: data.professionalCertificates,
+        softSkillsIds: data.softSkills,
+        managementSkillsIds: data.managementSkills,
+        artitistikSkillsIds: data.artitistikSkills,
         commonCommitteesIds: data.commonCommittees,
       };
     }
@@ -740,6 +674,30 @@ class JobsRepository {
     });
 
     output.supervisor = UserRepository.cleanupForRelationships(output.supervisor);
+
+    output.academicCertificates = await record.getAcademicCertificates({
+      transaction,
+    });
+
+    output.trainingCertificates = await record.getTrainingCertificates({
+      transaction,
+    });
+
+    output.professionalCertificates = await record.getProfessionalCertificates({
+      transaction,
+    });
+
+    output.softSkills = await record.getSoftSkills({
+      transaction,
+    });
+
+    output.managementSkills = await record.getManagementSkills({
+      transaction,
+    });
+
+    output.artitistikSkills = await record.getArtitistikSkills({
+      transaction,
+    });
 
     output.commonCommittees = await record.getCommonCommittees({
       transaction,

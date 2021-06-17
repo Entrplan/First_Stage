@@ -16,7 +16,7 @@ export default function (sequelize) {
         type: DataTypes.TEXT,
         validate: {
           isIn: [[
-            ": لجنة المبايعات",
+            "لجنة المبايعات",
             "لجنة المسافرات",
             "لجنة المصالحات",
             "لجنة اللجان"

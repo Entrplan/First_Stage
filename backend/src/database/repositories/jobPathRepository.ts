@@ -348,7 +348,13 @@ class JobPathRepository {
       whereAnd.push({
         [Op.or]: [
           { ['id']: SequelizeFilterUtils.uuid(query) },
-
+          {
+            [Op.and]: SequelizeFilterUtils.ilikeIncludes(
+              'jobPath',
+              'jobName',
+              query,
+            ),
+          },
         ],
       });
     }
@@ -357,16 +363,16 @@ class JobPathRepository {
 
     const records = await options.database.jobPath.findAll(
       {
-        attributes: ['id', 'id'],
+        attributes: ['id', 'jobName'],
         where,
         limit: limit ? Number(limit) : undefined,
-        order: [['id', 'ASC']],
+        order: [['jobName', 'ASC']],
       },
     );
 
     return records.map((record) => ({
       id: record.id,
-      label: record.id,
+      label: record.jobName,
     }));
   }
 

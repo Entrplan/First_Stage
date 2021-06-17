@@ -344,7 +344,13 @@ class CommonComiteesRepository {
       whereAnd.push({
         [Op.or]: [
           { ['id']: SequelizeFilterUtils.uuid(query) },
-
+          {
+            [Op.and]: SequelizeFilterUtils.ilikeIncludes(
+              'commonComitees',
+              'menus',
+              query,
+            ),
+          },
         ],
       });
     }
@@ -353,16 +359,16 @@ class CommonComiteesRepository {
 
     const records = await options.database.commonComitees.findAll(
       {
-        attributes: ['id', 'id'],
+        attributes: ['id', 'menus'],
         where,
         limit: limit ? Number(limit) : undefined,
-        order: [['id', 'ASC']],
+        order: [['menus', 'ASC']],
       },
     );
 
     return records.map((record) => ({
       id: record.id,
-      label: record.id,
+      label: record.menus,
     }));
   }
 

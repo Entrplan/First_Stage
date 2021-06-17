@@ -14,7 +14,7 @@ export default function (sequelize) {
         allowNull: false,
         validate: {
           notEmpty: true,
-        },
+        }
       },
       date: {
         type: DataTypes.DATE,
@@ -27,10 +27,10 @@ export default function (sequelize) {
       },
       importHash: {
         type: DataTypes.STRING(255),
-        allowNull: true,
+        allowNull: true,    
         validate: {
           len: [0, 255],
-        },
+        },    
       },
     },
     {
@@ -42,6 +42,13 @@ export default function (sequelize) {
             deletedAt: null,
           },
         },
+        {
+          unique: true,
+          fields: ['version', 'tenantId'],
+          where: {
+            deletedAt: null,
+          },
+        },
       ],
       timestamps: true,
       paranoid: true,
@@ -49,6 +56,10 @@ export default function (sequelize) {
   );
 
   cardInformation.associate = (models) => {
+
+
+
+    
     models.cardInformation.belongsTo(models.tenant, {
       as: 'tenant',
       foreignKey: {

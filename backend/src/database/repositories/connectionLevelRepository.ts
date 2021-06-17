@@ -348,7 +348,13 @@ class ConnectionLevelRepository {
       whereAnd.push({
         [Op.or]: [
           { ['id']: SequelizeFilterUtils.uuid(query) },
-
+          {
+            [Op.and]: SequelizeFilterUtils.ilikeIncludes(
+              'connectionLevel',
+              'external',
+              query,
+            ),
+          },
         ],
       });
     }
@@ -357,16 +363,16 @@ class ConnectionLevelRepository {
 
     const records = await options.database.connectionLevel.findAll(
       {
-        attributes: ['id', 'id'],
+        attributes: ['id', 'external'],
         where,
         limit: limit ? Number(limit) : undefined,
-        order: [['id', 'ASC']],
+        order: [['external', 'ASC']],
       },
     );
 
     return records.map((record) => ({
       id: record.id,
-      label: record.id,
+      label: record.external,
     }));
   }
 

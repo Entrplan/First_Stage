@@ -63,34 +63,40 @@ export default function (sequelize) {
       constraints: false,
     });
 
-    models.jobs.belongsTo(models.academicCertificates, {
+    models.jobs.belongsToMany(models.academicCertificates, {
       as: 'academicCertificates',
       constraints: false,
+      through: 'jobsAcademicCertificatesAcademicCertificates',
     });
 
-    models.jobs.belongsTo(models.trainingCertificates, {
+    models.jobs.belongsToMany(models.trainingCertificates, {
       as: 'trainingCertificates',
       constraints: false,
+      through: 'jobsTrainingCertificatesTrainingCertificates',
     });
 
-    models.jobs.belongsTo(models.professionalCertifications, {
+    models.jobs.belongsToMany(models.professionalCertifications, {
       as: 'professionalCertificates',
       constraints: false,
+      through: 'jobsProfessionalCertificatesProfessionalCertifications',
     });
 
-    models.jobs.belongsTo(models.softSkills, {
+    models.jobs.belongsToMany(models.softSkills, {
       as: 'softSkills',
       constraints: false,
+      through: 'jobsSoftSkillsSoftSkills',
     });
 
-    models.jobs.belongsTo(models.managementSkills, {
+    models.jobs.belongsToMany(models.managementSkills, {
       as: 'managementSkills',
       constraints: false,
+      through: 'jobsManagementSkillsManagementSkills',
     });
 
-    models.jobs.belongsTo(models.artisticSkills, {
+    models.jobs.belongsToMany(models.artisticSkills, {
       as: 'artitistikSkills',
       constraints: false,
+      through: 'jobsArtitistikSkillsArtisticSkills',
     });
 
     models.jobs.belongsTo(models.jobFrameworks, {

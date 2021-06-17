@@ -336,7 +336,13 @@ class AdministrativeFinancialPowersRepository {
       whereAnd.push({
         [Op.or]: [
           { ['id']: SequelizeFilterUtils.uuid(query) },
-
+          {
+            [Op.and]: SequelizeFilterUtils.ilikeIncludes(
+              'administrativeFinancialPowers',
+              'administrativeFinancialPowers',
+              query,
+            ),
+          },
         ],
       });
     }
@@ -345,16 +351,16 @@ class AdministrativeFinancialPowersRepository {
 
     const records = await options.database.administrativeFinancialPowers.findAll(
       {
-        attributes: ['id', 'id'],
+        attributes: ['id', 'administrativeFinancialPowers'],
         where,
         limit: limit ? Number(limit) : undefined,
-        order: [['id', 'ASC']],
+        order: [['administrativeFinancialPowers', 'ASC']],
       },
     );
 
     return records.map((record) => ({
       id: record.id,
-      label: record.id,
+      label: record.administrativeFinancialPowers,
     }));
   }
 

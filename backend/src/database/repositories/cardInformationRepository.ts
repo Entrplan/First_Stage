@@ -382,7 +382,13 @@ class CardInformationRepository {
       whereAnd.push({
         [Op.or]: [
           { ['id']: SequelizeFilterUtils.uuid(query) },
-
+          {
+            [Op.and]: SequelizeFilterUtils.ilikeIncludes(
+              'cardInformation',
+              'version',
+              query,
+            ),
+          },
         ],
       });
     }
@@ -391,16 +397,16 @@ class CardInformationRepository {
 
     const records = await options.database.cardInformation.findAll(
       {
-        attributes: ['id', 'id'],
+        attributes: ['id', 'version'],
         where,
         limit: limit ? Number(limit) : undefined,
-        order: [['id', 'ASC']],
+        order: [['version', 'ASC']],
       },
     );
 
     return records.map((record) => ({
       id: record.id,
-      label: record.id,
+      label: record.version,
     }));
   }
 
