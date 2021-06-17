@@ -1,0 +1,8 @@
+@media print {
+    .custom {
+        font-size: 1.5rem;
+        font-family: 'Times New Roman', Times, serif;
+        direction: rtl;
+        padding: 1rem;
+    }
+}
