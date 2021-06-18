@@ -26,7 +26,7 @@ const en = {
   },
 
   app: {
-    title: 'Application',
+    title: 'موقع إدارة الموظفين',
   },
 
   api: {
@@ -36,47 +36,46 @@ const en = {
   entities: {
     jobs: {
       name: 'jobs',
-      label: 'jobs',
-      menu: 'jobs',
+      label: 'وظائف',
+      menu: 'وظائف',
       exporterFileName: 'jobs_export',
       list: {
-        menu: 'jobs',
-        title: 'jobs',
+        menu: 'وظائف',
+        title: 'وظائف',
       },
       create: {
-        success: 'jobs successfully saved',
+        success: 'وظائف successfully saved',
       },
       update: {
-        success: 'jobs successfully saved',
+        success: 'وظائف successfully saved',
       },
       destroy: {
-        success: 'jobs successfully deleted',
+        success: 'وظائف successfully deleted',
       },
       destroyAll: {
-        success: 'jobs(s) successfully deleted',
+        success: 'وظائف(s) successfully deleted',
       },
       edit: {
-        title: 'Edit jobs',
+        title: 'Edit وظائف',
       },
       fields: {
         id: 'Id',
-        positionName: 'Position Name',
-        department: 'Departments',
-        supervisor: 'Supervisor',
-        jobLocation: 'Job Location',
-        jobCode: 'Job Code',
-        generalDescription: 'General Description',
-        generalGoals: 'General Goals',
-        detailedGoals: 'Detailed Goals',
-        academicCertificates: 'Academic Certificates',
-        trainingCertificates: 'Training Certificates',
-        professionalCertificates:
-          'Professional Certificates',
-        softSkills: 'Soft Skills',
+        positionName: 'المسمى الوظيفي',
+        department: 'القسم / الادارة',
+        supervisor: 'المدير المباشر',
+        jobLocation: 'موقع العمل',
+        jobCode: 'الرقم/الرمز',
+        generalDescription: 'الوصف العام',
+        generalGoals: 'الاهداف العامة',
+        detailedGoals: 'الاهداف التفصيلية',
+        academicCertificates: 'الشهادات الأكاديمية',
+        trainingCertificates: 'الشهادات التدريبية',
+        professionalCertificates: 'الشهادات المهنية',
+        softSkills: 'المهارات الناعمة',
         managementSkills: 'المهارات الإدارية',
         artitistikSkills: 'ArtitistikSkills',
         jobFramework: 'أطر الوظيفة',
-        connectionLevel: 'Connection Level',
+        connectionLevel: 'مستوى الاتصال',
         commonCommittees: 'أللجان المشتركة',
         jobRequirments: 'متطلبات الوظيفة',
         jobPath: 'المسار الوظيفي',
@@ -99,13 +98,13 @@ const en = {
       },
       hints: {},
       new: {
-        title: 'New jobs',
+        title: 'New وظائف',
       },
       view: {
-        title: 'View jobs',
+        title: 'View وظائف',
       },
       importer: {
-        title: 'Import jobs',
+        title: 'Import وظائف',
         fileName: 'jobs_import_template',
         hint: 'Files/Images columns must be the URLs of the files separated by space.',
       },
@@ -113,27 +112,27 @@ const en = {
 
     candidates: {
       name: 'candidates',
-      label: 'Candidates',
-      menu: 'Candidates',
+      label: 'المتقدمين',
+      menu: 'المتقدمين',
       exporterFileName: 'candidates_export',
       list: {
-        menu: 'Candidates',
-        title: 'Candidates',
+        menu: 'المتقدمين',
+        title: 'المتقدمين',
       },
       create: {
-        success: 'Candidates successfully saved',
+        success: 'المتقدمين successfully saved',
       },
       update: {
-        success: 'Candidates successfully saved',
+        success: 'المتقدمين successfully saved',
       },
       destroy: {
-        success: 'Candidates successfully deleted',
+        success: 'المتقدمين successfully deleted',
       },
       destroyAll: {
-        success: 'Candidates(s) successfully deleted',
+        success: 'المتقدمين(s) successfully deleted',
       },
       edit: {
-        title: 'Edit Candidates',
+        title: 'Edit المتقدمين',
       },
       fields: {
         id: 'Id',
@@ -152,13 +151,13 @@ const en = {
         expectedSalaryRange: 'الراتب المتوقع',
         expectedSalary: 'الراتب المتوقع',
         softSkills: 'مهارات ناعمة',
-        managementSkills: 'Managment Skills',
+        managementSkills: 'مهارات الإدارة',
         artisticSkills: 'مهارات فنية',
         candidateCreatedDateRange: 'تاريخ إنشاء المرشح',
         candidateCreatedDate: 'تاريخ إنشاء المرشح',
         jobs: 'الوظيفة المسندة',
-        resume: 'Resume',
-        photo: 'Photo ',
+        resume: 'السيرة الذاتية',
+        photo: 'صورة الموظف ',
         tactLevel: 'مستوى اللباقة',
         yearsExperienceRange: 'سنوات الخبرة',
         yearsExperience: 'سنوات الخبرة',
@@ -188,17 +187,17 @@ const en = {
         candidateCreatedDate: 'تاريخ إنشاء المرشح',
       },
       hints: {
-        resume: 'Resume',
-        photo: 'Photo ',
+        resume: 'السيرة الذاتية',
+        photo: 'صورة الموظف ',
       },
       new: {
-        title: 'New Candidates',
+        title: 'New المتقدمين',
       },
       view: {
-        title: 'View Candidates',
+        title: 'View المتقدمين',
       },
       importer: {
-        title: 'Import Candidates',
+        title: 'Import المتقدمين',
         fileName: 'candidates_import_template',
         hint: 'Files/Images columns must be the URLs of the files separated by space.',
       },
@@ -206,33 +205,32 @@ const en = {
 
     academicCertificates: {
       name: 'academicCertificates',
-      label: 'Academic Certificates',
-      menu: 'Academic Certificates',
+      label: 'الشهادات الاكاديمية',
+      menu: 'الشهادات الاكاديمية',
       exporterFileName: 'academicCertificates_export',
       list: {
-        menu: 'Academic Certificates',
-        title: 'Academic Certificates',
+        menu: 'الشهادات الاكاديمية',
+        title: 'الشهادات الاكاديمية',
       },
       create: {
-        success: 'Academic Certificates successfully saved',
+        success: 'الشهادات الاكاديمية successfully saved',
       },
       update: {
-        success: 'Academic Certificates successfully saved',
+        success: 'الشهادات الاكاديمية successfully saved',
       },
       destroy: {
-        success:
-          'Academic Certificates successfully deleted',
+        success: 'الشهادات الاكاديمية successfully deleted',
       },
       destroyAll: {
         success:
-          'Academic Certificates(s) successfully deleted',
+          'الشهادات الاكاديمية(s) successfully deleted',
       },
       edit: {
-        title: 'Edit Academic Certificates',
+        title: 'Edit الشهادات الاكاديمية',
       },
       fields: {
         id: 'Id',
-        academicCertificates: 'Academic Certificates',
+        academicCertificates: 'الشهادات الاكاديمية',
         createdAt: 'Created at',
         updatedAt: 'Updated at',
         createdAtRange: 'Created at',
@@ -241,13 +239,13 @@ const en = {
       placeholders: {},
       hints: {},
       new: {
-        title: 'New Academic Certificates',
+        title: 'New الشهادات الاكاديمية',
       },
       view: {
-        title: 'View Academic Certificates',
+        title: 'View الشهادات الاكاديمية',
       },
       importer: {
-        title: 'Import Academic Certificates',
+        title: 'Import الشهادات الاكاديمية',
         fileName: 'academicCertificates_import_template',
         hint: 'Files/Images columns must be the URLs of the files separated by space.',
       },
@@ -255,50 +253,50 @@ const en = {
 
     softSkills: {
       name: 'softSkills',
-      label: 'Soft Skills',
-      menu: 'Soft Skills',
+      label: 'المهارات الناعمة',
+      menu: 'المهارات الناعمة',
       exporterFileName: 'softSkills_export',
       list: {
-        menu: 'Soft Skills',
-        title: 'Soft Skills',
+        menu: 'المهارات الناعمة',
+        title: 'المهارات الناعمة',
       },
       create: {
-        success: 'Soft Skills successfully saved',
+        success: 'المهارات الناعمة successfully saved',
       },
       update: {
-        success: 'Soft Skills successfully saved',
+        success: 'المهارات الناعمة successfully saved',
       },
       destroy: {
-        success: 'Soft Skills successfully deleted',
+        success: 'المهارات الناعمة successfully deleted',
       },
       destroyAll: {
-        success: 'Soft Skills(s) successfully deleted',
+        success: 'المهارات الناعمة(s) successfully deleted',
       },
       edit: {
-        title: 'Edit Soft Skills',
+        title: 'Edit المهارات الناعمة',
       },
       fields: {
         id: 'Id',
-        name: 'Soft Skills',
+        name: 'المهارات الناعمة',
         createdAt: 'Created at',
         updatedAt: 'Updated at',
         createdAtRange: 'Created at',
       },
       enumerators: {},
       placeholders: {
-        name: 'Soft Skills',
+        name: 'المهارات الناعمة',
       },
       hints: {
-        name: 'Soft Skills',
+        name: 'المهارات الناعمة',
       },
       new: {
-        title: 'New Soft Skills',
+        title: 'New المهارات الناعمة',
       },
       view: {
-        title: 'View Soft Skills',
+        title: 'View المهارات الناعمة',
       },
       importer: {
-        title: 'Import Soft Skills',
+        title: 'Import المهارات الناعمة',
         fileName: 'softSkills_import_template',
         hint: 'Files/Images columns must be the URLs of the files separated by space.',
       },
@@ -306,29 +304,28 @@ const en = {
 
     trainingCertificates: {
       name: 'trainingCertificates',
-      label: 'Training Certificates',
-      menu: 'Training Certificates',
+      label: 'الشهادات التدريبية',
+      menu: 'الشهادات التدريبية',
       exporterFileName: 'trainingCertificates_export',
       list: {
-        menu: 'Training Certificates',
-        title: 'Training Certificates',
+        menu: 'الشهادات التدريبية',
+        title: 'الشهادات التدريبية',
       },
       create: {
-        success: 'Training Certificates successfully saved',
+        success: 'الشهادات التدريبية successfully saved',
       },
       update: {
-        success: 'Training Certificates successfully saved',
+        success: 'الشهادات التدريبية successfully saved',
       },
       destroy: {
-        success:
-          'Training Certificates successfully deleted',
+        success: 'الشهادات التدريبية successfully deleted',
       },
       destroyAll: {
         success:
-          'Training Certificates(s) successfully deleted',
+          'الشهادات التدريبية(s) successfully deleted',
       },
       edit: {
-        title: 'Edit Training Certificates',
+        title: 'Edit الشهادات التدريبية',
       },
       fields: {
         id: 'Id',
@@ -341,13 +338,13 @@ const en = {
       placeholders: {},
       hints: {},
       new: {
-        title: 'New Training Certificates',
+        title: 'New الشهادات التدريبية',
       },
       view: {
-        title: 'View Training Certificates',
+        title: 'View الشهادات التدريبية',
       },
       importer: {
-        title: 'Import Training Certificates',
+        title: 'Import الشهادات التدريبية',
         fileName: 'trainingCertificates_import_template',
         hint: 'Files/Images columns must be the URLs of the files separated by space.',
       },
@@ -355,57 +352,50 @@ const en = {
 
     professionalCertifications: {
       name: 'professionalCertifications',
-      label: 'Professional Certifications',
-      menu: 'Professional Certifications',
+      label: 'الشهادات المهنية',
+      menu: 'الشهادات المهنية',
       exporterFileName: 'professionalCertifications_export',
       list: {
-        menu: 'Professional Certifications',
-        title: 'Professional Certifications',
+        menu: 'الشهادات المهنية',
+        title: 'الشهادات المهنية',
       },
       create: {
-        success:
-          'Professional Certifications successfully saved',
+        success: 'الشهادات المهنية successfully saved',
       },
       update: {
-        success:
-          'Professional Certifications successfully saved',
+        success: 'الشهادات المهنية successfully saved',
       },
       destroy: {
-        success:
-          'Professional Certifications successfully deleted',
+        success: 'الشهادات المهنية successfully deleted',
       },
       destroyAll: {
-        success:
-          'Professional Certifications(s) successfully deleted',
+        success: 'الشهادات المهنية(s) successfully deleted',
       },
       edit: {
-        title: 'Edit Professional Certifications',
+        title: 'Edit الشهادات المهنية',
       },
       fields: {
         id: 'Id',
-        professionalCertifications:
-          'Professional Certifications',
+        professionalCertifications: 'الشهادات المهنية',
         createdAt: 'Created at',
         updatedAt: 'Updated at',
         createdAtRange: 'Created at',
       },
       enumerators: {},
       placeholders: {
-        professionalCertifications:
-          'Professional Certifications',
+        professionalCertifications: 'الشهادات المهنية',
       },
       hints: {
-        professionalCertifications:
-          'Professional Certifications',
+        professionalCertifications: 'الشهادات المهنية',
       },
       new: {
-        title: 'New Professional Certifications',
+        title: 'New الشهادات المهنية',
       },
       view: {
-        title: 'View Professional Certifications',
+        title: 'View الشهادات المهنية',
       },
       importer: {
-        title: 'Import Professional Certifications',
+        title: 'Import الشهادات المهنية',
         fileName:
           'professionalCertifications_import_template',
         hint: 'Files/Images columns must be the URLs of the files separated by space.',
@@ -414,31 +404,31 @@ const en = {
 
     managementSkills: {
       name: 'managementSkills',
-      label: 'Managment Skills',
-      menu: 'Managment Skills',
+      label: 'مهارات الإدارة',
+      menu: 'مهارات الإدارة',
       exporterFileName: 'managementSkills_export',
       list: {
-        menu: 'Managment Skills',
-        title: 'Managment Skills',
+        menu: 'مهارات الإدارة',
+        title: 'مهارات الإدارة',
       },
       create: {
-        success: 'Managment Skills successfully saved',
+        success: 'مهارات الإدارة successfully saved',
       },
       update: {
-        success: 'Managment Skills successfully saved',
+        success: 'مهارات الإدارة successfully saved',
       },
       destroy: {
-        success: 'Managment Skills successfully deleted',
+        success: 'مهارات الإدارة successfully deleted',
       },
       destroyAll: {
-        success: 'Managment Skills(s) successfully deleted',
+        success: 'مهارات الإدارة(s) successfully deleted',
       },
       edit: {
-        title: 'Edit Managment Skills',
+        title: 'Edit مهارات الإدارة',
       },
       fields: {
         id: 'Id',
-        managementSkills: 'Managment Skills',
+        managementSkills: 'مهارات الإدارة',
         createdAt: 'Created at',
         updatedAt: 'Updated at',
         createdAtRange: 'Created at',
@@ -447,13 +437,13 @@ const en = {
       placeholders: {},
       hints: {},
       new: {
-        title: 'New Managment Skills',
+        title: 'New مهارات الإدارة',
       },
       view: {
-        title: 'View Managment Skills',
+        title: 'View مهارات الإدارة',
       },
       importer: {
-        title: 'Import Managment Skills',
+        title: 'Import مهارات الإدارة',
         fileName: 'managementSkills_import_template',
         hint: 'Files/Images columns must be the URLs of the files separated by space.',
       },
@@ -461,31 +451,31 @@ const en = {
 
     artisticSkills: {
       name: 'artisticSkills',
-      label: 'Artistic Skills',
-      menu: 'Artistic Skills',
+      label: 'المهارات الفنية',
+      menu: 'المهارات الفنية',
       exporterFileName: 'artisticSkills_export',
       list: {
-        menu: 'Artistic Skills',
-        title: 'Artistic Skills',
+        menu: 'المهارات الفنية',
+        title: 'المهارات الفنية',
       },
       create: {
-        success: 'Artistic Skills successfully saved',
+        success: 'المهارات الفنية successfully saved',
       },
       update: {
-        success: 'Artistic Skills successfully saved',
+        success: 'المهارات الفنية successfully saved',
       },
       destroy: {
-        success: 'Artistic Skills successfully deleted',
+        success: 'المهارات الفنية successfully deleted',
       },
       destroyAll: {
-        success: 'Artistic Skills(s) successfully deleted',
+        success: 'المهارات الفنية(s) successfully deleted',
       },
       edit: {
-        title: 'Edit Artistic Skills',
+        title: 'Edit المهارات الفنية',
       },
       fields: {
         id: 'Id',
-        artisticSkills: 'Artistic Skills',
+        artisticSkills: 'المهارات الفنية',
         createdAt: 'Created at',
         updatedAt: 'Updated at',
         createdAtRange: 'Created at',
@@ -494,13 +484,13 @@ const en = {
       placeholders: {},
       hints: {},
       new: {
-        title: 'New Artistic Skills',
+        title: 'New المهارات الفنية',
       },
       view: {
-        title: 'View Artistic Skills',
+        title: 'View المهارات الفنية',
       },
       importer: {
-        title: 'Import Artistic Skills',
+        title: 'Import المهارات الفنية',
         fileName: 'artisticSkills_import_template',
         hint: 'Files/Images columns must be the URLs of the files separated by space.',
       },
@@ -533,8 +523,8 @@ const en = {
       fields: {
         id: 'Id',
         clientName: 'اسم العميل ',
-        jobCountRange: 'عدد الjobs',
-        jobCount: 'عدد الjobs',
+        jobCountRange: 'عدد الوظائف',
+        jobCount: 'عدد الوظائف',
         clientIndustry: 'صناعة العميل',
         createdAt: 'Created at',
         updatedAt: 'Updated at',
@@ -764,29 +754,27 @@ const en = {
 
     employmentContract: {
       name: 'employmentContract',
-      label: 'Employment Contract',
-      menu: 'Employment Contract',
+      label: 'عقد العمل',
+      menu: 'عقد العمل',
       exporterFileName: 'employmentContract_export',
       list: {
-        menu: 'Employment Contract',
-        title: 'Employment Contract',
+        menu: 'عقد العمل',
+        title: 'عقد العمل',
       },
       create: {
-        success: 'Employment Contract  successfully saved',
+        success: 'عقد العمل  successfully saved',
       },
       update: {
-        success: 'Employment Contract  successfully saved',
+        success: 'عقد العمل  successfully saved',
       },
       destroy: {
-        success:
-          'Employment Contract  successfully deleted',
+        success: 'عقد العمل  successfully deleted',
       },
       destroyAll: {
-        success:
-          'Employment Contract (s) successfully deleted',
+        success: 'عقد العمل (s) successfully deleted',
       },
       edit: {
-        title: 'Edit Employment Contract ',
+        title: 'Edit عقد العمل ',
       },
       fields: {
         id: 'Id',
@@ -834,13 +822,13 @@ const en = {
       },
       hints: {},
       new: {
-        title: 'New Employment Contract ',
+        title: 'New عقد العمل ',
       },
       view: {
-        title: 'View Employment Contract ',
+        title: 'View عقد العمل ',
       },
       importer: {
-        title: 'Import Employment Contract',
+        title: 'Import عقد العمل',
         fileName: 'employmentContract_import_template',
         hint: 'Files/Images columns must be the URLs of the files separated by space.',
       },
@@ -856,19 +844,19 @@ const en = {
         title: 'ConnectionLevels',
       },
       create: {
-        success: 'Connection Level successfully saved',
+        success: 'مستوى الاتصال successfully saved',
       },
       update: {
-        success: 'Connection Level successfully saved',
+        success: 'مستوى الاتصال successfully saved',
       },
       destroy: {
-        success: 'Connection Level successfully deleted',
+        success: 'مستوى الاتصال successfully deleted',
       },
       destroyAll: {
-        success: 'Connection Level(s) successfully deleted',
+        success: 'مستوى الاتصال(s) successfully deleted',
       },
       edit: {
-        title: 'Edit Connection Level',
+        title: 'Edit مستوى الاتصال',
       },
       fields: {
         id: 'Id',
@@ -880,15 +868,15 @@ const en = {
       },
       enumerators: {},
       placeholders: {
-        external: 'حدد Connection Level بكلمة',
-        internal: 'حدد Connection Level بكلمة',
+        external: 'حدد مستوى الاتصال بكلمة',
+        internal: 'حدد مستوى الاتصال بكلمة',
       },
       hints: {},
       new: {
-        title: 'New Connection Level',
+        title: 'New مستوى الاتصال',
       },
       view: {
-        title: 'View Connection Level',
+        title: 'View مستوى الاتصال',
       },
       importer: {
         title: 'Import ConnectionLevels',

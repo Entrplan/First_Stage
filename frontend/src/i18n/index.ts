@@ -1,3 +1,4 @@
+import { InstantiateExpr } from '@angular/compiler';
 import { get } from 'lodash';
 import * as moment from 'moment';
 import { setLocale as setYupLocale } from 'yup';
@@ -29,6 +30,14 @@ const languages = {
     materialLocale: 'pt-br',
     owlDateTimeLocale: 'pt-BR',
   },
+  ar: {
+    id: 'ar',
+    label: 'العربية',
+    flag: '/assets/images/flags/arabic.png',
+    dictionary: null,
+    materialLocale: 'ar',
+    owlDateTimeLocale: 'ar',
+  },
 };
 
 export async function init() {
@@ -46,6 +55,10 @@ export async function init() {
 
   if (currentLanguageCode === 'es') {
     await initEs();
+  }
+
+  if (currentLanguageCode === 'ar') {
+    await initAr();
   }
 }
 
@@ -103,6 +116,20 @@ async function initEn() {
   return language;
 }
 
+async function initAr() {
+  const language = languages['ar'];
+
+  language.dictionary = (
+    await import('src/i18n/ar')
+  ).default;
+
+  if (language.dictionary.validation) {
+    setYupLocale(language.dictionary.validation);
+  }
+
+  return language;
+}
+
 export function getLanguage() {
   return languages[getLanguageCode()];
 }
@@ -113,14 +140,14 @@ function format(message, args) {
   }
 
   try {
-    return message.replace(/{(\d+)}/g, function (
-      match,
-      number,
-    ) {
-      return typeof args[number] != 'undefined'
-        ? args[number]
-        : match;
-    });
+    return message.replace(
+      /{(\d+)}/g,
+      function (match, number) {
+        return typeof args[number] != 'undefined'
+          ? args[number]
+          : match;
+      },
+    );
   } catch (error) {
     console.error(message, error);
     throw error;
