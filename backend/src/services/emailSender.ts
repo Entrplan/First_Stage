@@ -1,30 +1,67 @@
-const nodemailer = require('nodemailer');
+import assert from 'assert';
+import { getConfig } from '../config';
+import sendgridMail from '@sendgrid/mail';
+
+if (getConfig().SENDGRID_KEY) {
+  sendgridMail.setApiKey(getConfig().SENDGRID_KEY);
+}
 
 export default class EmailSender {
-  constructor() {}
+  templateId: string;
+  variables: any;
 
-  MailSender() {
-    let transport = nodemailer.createTransport({
-      host: 'smtp.mailtrap.io',
-      port: 2525,
-      auth: {
-        user: 'elias.dahi28@gmail.com',
-        pass: 'H@noona561988',
-      },
-    });
+  constructor(templateId, variables) {
+    this.templateId = templateId;
+    this.variables = variables;
+  }
 
-    const message = {
-      from: 'elias.dahi28@gmail.com', // Sender address
-      to: 'elias_dahi@hotmail.com', // List of recipients
-      subject: 'Design Your Model S | Tesla', // Subject line
-      text: 'Have the most fun you can in a car. Get your Tesla today!', // Plain text body
+  static get TEMPLATES() {
+    if (!EmailSender.isConfigured) {
+      return {};
+    }
+
+    return {
+      EMAIL_ADDRESS_VERIFICATION: getConfig()
+        .SENDGRID_TEMPLATE_EMAIL_ADDRESS_VERIFICATION,
+      INVITATION: getConfig().SENDGRID_TEMPLATE_INVITATION,
+      PASSWORD_RESET: getConfig()
+        .SENDGRID_TEMPLATE_PASSWORD_RESET,
     };
-    transport.sendMail(message, function (err, info) {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(info);
-      }
-    });
+  }
+
+  async sendTo(recipient) {
+    if (!EmailSender.isConfigured) {
+      console.error(`Email provider is not configured.`);
+      return;
+    }
+
+    assert(recipient, 'to is required');
+    assert(
+      getConfig().SENDGRID_EMAIL_FROM,
+      'SENDGRID_EMAIL_FROM is required',
+    );
+    assert(this.templateId, 'templateId is required');
+
+    const msg = {
+      to: recipient,
+      from: getConfig().SENDGRID_EMAIL_FROM,
+      templateId: this.templateId,
+      dynamicTemplateData: this.variables,
+    };
+
+    try {
+      return await sendgridMail.send(msg);
+    } catch (error) {
+      console.error('Error sending SendGrid email.');
+      console.error(error);
+      throw error;
+    }
+  }
+
+  static get isConfigured() {
+    return Boolean(
+      getConfig().SENDGRID_EMAIL_FROM &&
+        getConfig().SENDGRID_KEY,
+    );
   }
 }
