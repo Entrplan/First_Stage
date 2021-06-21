@@ -5,7 +5,9 @@ export class Roles {
   static get values() {
     return {
       admin: 'admin',
-      custom: 'custom',
+      company: 'company',
+      hr: 'hr',
+      employee: 'employee',
     };
   }
 
