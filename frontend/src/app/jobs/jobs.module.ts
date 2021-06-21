@@ -12,6 +12,7 @@ import { JobsViewToolbarComponent } from 'src/app/jobs/view/jobs-view-toolbar.co
 import { ImporterService } from 'src/app/shared/importer/importer.service';
 import { JobsImporterService } from 'src/app/jobs/importer/jobs-importer.service';
 import { AppFormAutocompleteModule } from 'src/app/app-form-autocomplete.module';
+import { NgxPrintModule } from 'ngx-print';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AppFormAutocompleteModule } from 'src/app/app-form-autocomplete.module'
     JobsRoutingModule,
     LayoutModule,
     AppFormAutocompleteModule,
+    NgxPrintModule,
   ],
   exports: [],
   providers: [
