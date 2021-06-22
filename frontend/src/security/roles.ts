@@ -4,9 +4,9 @@ import { values as _values } from 'lodash';
 export class Roles {
   static get values() {
     return {
-      admin: 'admin',
       company: 'company',
-      hr: 'hr',
+      manager: 'manager',
+      candidate: 'candidate',
       employee: 'employee',
     };
   }
