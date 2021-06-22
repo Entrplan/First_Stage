@@ -1369,9 +1369,17 @@ const en = {
       label: 'Admin',
       description: 'Full access to all resources',
     },
-    custom: {
-      label: 'Custom Role',
-      description: 'Custom role access',
+    manager: {
+      label: 'Manager',
+      description: 'Company Manager Roles',
+    },
+    candidate: {
+      label: 'Candidate',
+      description: 'Person who wants for job apply',
+    },
+    employee: {
+      label: 'Employee',
+      description: 'Company Employee Roles.',
     },
   },
 
