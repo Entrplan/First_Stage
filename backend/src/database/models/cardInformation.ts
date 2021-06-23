@@ -42,13 +42,6 @@ export default function (sequelize) {
             deletedAt: null,
           },
         },
-        {
-          unique: true,
-          fields: ['version', 'tenantId'],
-          where: {
-            deletedAt: null,
-          },
-        },
       ],
       timestamps: true,
       paranoid: true,
