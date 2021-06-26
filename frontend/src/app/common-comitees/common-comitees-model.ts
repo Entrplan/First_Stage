@@ -11,24 +11,71 @@ function label(name) {
 }
 
 function enumeratorLabel(name, value) {
-  return i18n(`entities.commonComitees.enumerators.${name}.${value}`);
+  return i18n(
+    `entities.commonComitees.enumerators.${name}.${value}`,
+  );
 }
 
 function placeholder(name) {
-  return i18n(`entities.commonComitees.placeholders.${name}`);
+  return i18n(
+    `entities.commonComitees.placeholders.${name}`,
+  );
 }
 
 const fields = {
   id: new IdField('id', label('id')),
-  addedCommittee: new StringField('addedCommittee', label('addedCommittee'), {
-    "placeholder": placeholder('addedCommittee')
-  }),
-  menus: new EnumeratorField('menus', label('menus'), [
-    { id: 'لجنة المبايعات', label: enumeratorLabel('menus', 'لجنة المبايعات') },
-    { id: 'لجنة المسافرات', label: enumeratorLabel('menus', 'لجنة المسافرات') },
-    { id: 'لجنة المصالحات', label: enumeratorLabel('menus', 'لجنة المصالحات') },
-    { id: 'لجنة اللجان', label: enumeratorLabel('menus', 'لجنة اللجان') },
-  ],{}),
+  addedCommittee: new StringField(
+    'addedCommittee',
+    label('addedCommittee'),
+    {
+      placeholder: placeholder('addedCommittee'),
+    },
+  ),
+  menus: new EnumeratorField(
+    'menus',
+    label('menus'),
+    [
+      {
+        id: 'لجنة التسعير',
+        label: enumeratorLabel('menus', 'لجنة التسعير'),
+      },
+      {
+        id: ' لجنة احتساب نسبة الخياسة',
+        label: enumeratorLabel(
+          'menus',
+          ' لجنة احتساب نسبة الخياسة',
+        ),
+      },
+      {
+        id: 'لجنة احتساب التكاليف',
+        label: enumeratorLabel(
+          'menus',
+          'لجنة احتساب التكاليف',
+        ),
+      },
+      {
+        id: 'لجان التحقيق',
+        label: enumeratorLabel('menus', 'لجان التحقيق'),
+      },
+      {
+        id: 'لجنة تفقد الجودة',
+        label: enumeratorLabel('menus', 'لجنة تفقد الجودة'),
+      },
+      {
+        id: 'لجنة دراسة السوق',
+        label: enumeratorLabel('menus', 'لجنة دراسة السوق'),
+      },
+      {
+        id: 'لجنة التوظيف',
+        label: enumeratorLabel('menus', 'لجنة التوظيف'),
+      },
+      {
+        id: 'لجنة الجرد',
+        label: enumeratorLabel('menus', 'لجنة الجرد'),
+      },
+    ],
+    {},
+  ),
   createdAt: new DateTimeField(
     'createdAt',
     label('createdAt'),
@@ -41,7 +88,6 @@ const fields = {
     'createdAtRange',
     label('createdAtRange'),
   ),
-
 };
 
 export class CommonComiteesModel extends GenericModel {
