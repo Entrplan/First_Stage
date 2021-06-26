@@ -14,21 +14,21 @@ export default function (sequelize) {
       },
       menus: {
         type: DataTypes.TEXT,
-        validate: {
-          isIn: [[
-            "لجنة المبايعات",
-            "لجنة المسافرات",
-            "لجنة المصالحات",
-            "لجنة اللجان"
-          ]],
-        }
+        // validate: {
+        //   isIn: [[
+        //     "لجنة المبايعات",
+        //     "لجنة المسافرات",
+        //     "لجنة المصالحات",
+        //     "لجنة اللجان"
+        //   ]],
+        // }
       },
       importHash: {
         type: DataTypes.STRING(255),
-        allowNull: true,    
+        allowNull: true,
         validate: {
           len: [0, 255],
-        },    
+        },
       },
     },
     {
@@ -40,7 +40,6 @@ export default function (sequelize) {
             deletedAt: null,
           },
         },
-
       ],
       timestamps: true,
       paranoid: true,
@@ -48,10 +47,6 @@ export default function (sequelize) {
   );
 
   commonComitees.associate = (models) => {
-
-
-
-    
     models.commonComitees.belongsTo(models.tenant, {
       as: 'tenant',
       foreignKey: {
