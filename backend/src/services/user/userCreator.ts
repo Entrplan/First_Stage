@@ -1,5 +1,5 @@
 import assert from 'assert';
-import EmailSender from '../../services/emailSender';
+import { EmailSender } from '../../services/emailSender';
 import UserRepository from '../../database/repositories/userRepository';
 import SequelizeRepository from '../../database/repositories/sequelizeRepository';
 import TenantUserRepository from '../../database/repositories/tenantUserRepository';
@@ -28,9 +28,10 @@ export default class UserCreator {
     await this._validate();
 
     try {
-      this.transaction = await SequelizeRepository.createTransaction(
-        this.options.database,
-      );
+      this.transaction =
+        await SequelizeRepository.createTransaction(
+          this.options.database,
+        );
 
       await this._addOrUpdateAll();
 
@@ -89,13 +90,11 @@ export default class UserCreator {
    * If the user already exists, it only adds the role to the user.
    */
   async _addOrUpdate(email) {
-    let user = await UserRepository.findByEmailWithoutAvatar(
-      email,
-      {
+    let user =
+      await UserRepository.findByEmailWithoutAvatar(email, {
         ...this.options,
         transaction: this.transaction,
-      },
-    );
+      });
 
     if (!user) {
       user = await UserRepository.create(
@@ -113,16 +112,17 @@ export default class UserCreator {
         this.options.currentTenant.id,
     );
 
-    const tenantUser = await TenantUserRepository.updateRoles(
-      this.options.currentTenant.id,
-      user.id,
-      this._roles,
-      {
-        ...this.options,
-        addRoles: true,
-        transaction: this.transaction,
-      },
-    );
+    const tenantUser =
+      await TenantUserRepository.updateRoles(
+        this.options.currentTenant.id,
+        user.id,
+        this._roles,
+        {
+          ...this.options,
+          addRoles: true,
+          transaction: this.transaction,
+        },
+      );
 
     if (!isUserAlreadyInTenant) {
       this.emailsToInvite.push({
@@ -155,13 +155,7 @@ export default class UserCreator {
           this.options.currentTenant,
         )}/auth/invitation?token=${emailToInvite.token}`;
 
-        return new EmailSender(
-          EmailSender.TEMPLATES.INVITATION,
-          {
-            tenant: this.options.currentTenant,
-            link,
-          },
-        ).sendTo(emailToInvite.email);
+        return new EmailSender().SendMail();
       }),
     );
   }

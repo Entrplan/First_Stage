@@ -36,9 +36,9 @@ export default class PermissionChecker {
   has(permission) {
     assert(permission, 'permission is required');
 
-    if (!this.isEmailVerified) {
-      return false;
-    }
+    // if (!this.isEmailVerified) {
+    //   return false;
+    // }
 
     if (!this.hasPlanPermission(permission)) {
       return false;
@@ -90,9 +90,9 @@ export default class PermissionChecker {
   get isEmailVerified() {
     // Only checks if the email is verified
     // if the email system is on
-    if (!EmailSender.isConfigured) {
-      return true;
-    }
+    // if (!EmailSender.isConfigured) {
+    //   return true;
+    // }
 
     return this.currentUser.emailVerified;
   }
